@@ -1,0 +1,347 @@
+ZEN class Batch B27WE Day 6 Tasks:
+
+Debugging JS: Part 2, Part 3
+
+----------------------------------------------------------------------------------------
+Part 2
+----------------------------------------------------------------------------------------
+1. 
+Write a code to print the numbers in the array
+
+js:
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var new_string = “”;
+ 
+for (var i = 1; i < 11; i--) {
+ new_string += numsArr[i] 
+}
+console.log(new_string);
+
+ans:
+var numsArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var new_string = "";
+
+for (var i = 0; i < 11; i++) {
+  new_string += numsArr[i];
+}
+console.log(new_string);           //for loop incrementing i++
+-------------------------------------------------------------------------------------------
+2. 
+Write a code to print the numbers in the array
+
+js:
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var new_string = “”;
+ 
+for (var i = 1; i < 11; i++) {
+ new_string += numsArr[i] + , 
+}
+console.log(new_string);
+
+ans:
+var numsArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var new_string = "";
+
+for (var i = 0; i < 11; i++) {
+  if (i == numsArr.length - 1) {
+    new_string += numsArr[numsArr.length - 1]; //seperate condition for last value
+  } else {
+    new_string += `${numsArr[i]}, `;           //using template literal
+  }
+}
+console.log(new_string);
+--------------------------------------------------------------------------------------------
+3. 
+Write a code to print from last to first with spaces (Make sure there is no space after the
+last element 1)
+
+js:
+var new_string = “”;
+ 
+for (var i = 11; i > 0; i — ) {
+ new_string += numsArr[i] + “ “ 
+}
+console.log(new_string);
+
+ans:
+var new_string = "";
+var numsArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+
+for (var i = numsArr.length - 1; i >= 0; i--) {  //changing the for loop to dynamic
+  new_string += numsArr[i] + " ";
+}
+new_string = new_string.trim();        //removing space in the end
+console.log(new_string);              
+--------------------------------------------------------------------------------------------
+4.
+Write a code to replace the array value — If the number is even, replace it with ‘even’.
+
+js:
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+for (var i = 0; i <=10; i++) {
+ if(numsArr[i] %2 == 0 )
+ {
+ numsArr[i] = odd
+ }
+}
+console.log(numsArr);
+
+ans:
+var numsArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+for (var i = 0; i <= 10; i++) {
+  if (numsArr[i] % 2 == 0) {
+    numsArr[i] = "even";            //using the string even
+  }
+}
+console.log(numsArr);
+--------------------------------------------------------------------------------------------
+5.
+Write a code to replace the array value — If the index is even, replace it with ‘even’.
+
+js:
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+for (var i = 0; i <=10; i++) {
+ if(numsArr[i] %2 == 0 )
+ {
+ numsArr[i] = even
+ }
+}
+console.log(numsArr);
+
+ans:
+var numsArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+for (var i = 0; i <= 10; i++) {
+  if (i % 2 == 0) {                   //changing if condition
+    numsArr[i] = "even";
+  }
+}
+console.log(numsArr);
+--------------------------------------------------------------------------------------------
+6. 
+Write a code to add all the numbers in the array
+
+js:
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+for (var i = 0; i <=10; i++) {
+ var sum;
+ sum += numsArr[i]
+}
+console.log(sum);
+
+ans:
+var numsArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var sum = 0;                                    //declaring sum outside for loop
+for (var i = 0; i <= numsArr.length - 1; i++) {
+  sum += numsArr[i];
+}
+console.log(sum);
+-------------------------------------------------------------------------------------------
+7.
+Write a code to add the even numbers only
+
+js:
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var sum=0;
+for (var i = 0; i <10; i++) {
+ if(numsArr[i]%2==0);
+ sum += numsArr[i]
+}
+console.log(sum);
+
+ans:
+var numsArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var sum = 0;
+for (var i = 0; i <= 10; i++) {
+  if (numsArr[i] % 2 == 0) {            //semicolon must be removed beside if
+    console.log(numsArr[i] % 2);
+    sum += numsArr[i];
+  }
+}
+console.log(sum);
+--------------------------------------------------------------------------------------------
+8. 
+Write a code to add the even numbers and subract the odd numbers
+
+js:
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var sum=100;
+for (var i = 0; i <=10; i++) {
+ if(numsArr[i]%2!=0);
+ {
+ sum += numsArr[i]
+ }
+ else
+ {
+ sum -= numsArr[i]
+ }
+}
+console.log(sum);
+
+ans:
+var numsArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var sum = 100;
+for (var i = 0; i <= 10; i++) {
+  if (numsArr[i] % 2 == 0) {      //if condition changed and semi colon removed
+    sum += numsArr[i];
+  } else {
+    sum -= numsArr[i];
+  }
+}
+console.log(sum);
+--------------------------------------------------------------------------------------------
+9.
+Write a code to print inner arrays
+
+js:
+var numsArr = [[1, 2, 3, 4, 5][ 6, 7, 8, 9, 10, 11]];
+for (var i = 0; i < numsArr.length; i++); {
+ console.log( numsArr[i])
+}
+
+ans:
+var numsArr = [
+  [1, 2, 3, 4, 5],
+  [6, 7, 8, 9, 10, 11],                   //adding , in input 
+];
+for (var i = 0; i <= numsArr.length; i++) {          //changing for loop syntax
+  console.log(numsArr[i]);
+}
+--------------------------------------------------------------------------------------------
+10.
+Write a code to print elements in the inner arrays
+
+js:
+var numsArr = [[1, 2, 3, 4, 5],[ 6, 7, 8, 9, 10, 11]];
+var str_all=0;
+for (var i = 0; i < numsArr.length; i++) {
+ var inner_array = numsArr[i];
+ for(var j = 0 ; j < inner_array.length;i++ )
+     str_all +=inner_array[j]
+}
+console.log(str_all);
+
+ans:
+var numsArr = [
+  [1, 2, 3, 4, 5],
+  [6, 7, 8, 9, 10, 11],
+];
+var str_all = "";
+for (var i = 0; i < numsArr.length; i++) {
+  var inner_array = numsArr[i];
+  for (var j = 0; j < inner_array.length; j++) {  //for loop increment changed
+    str_all += inner_array[j];
+  }
+}
+console.log(str_all);
+--------------------------------------------------------------------------------------------
+11.
+Write a code to replace the array value — If the index is even, replace it with ‘even’.
+
+js:
+var numsArr = [[1, 2, 3, 4, 5],[ 6, 7, 8, 9, 10, 11]];
+var str_all=0;
+for (var i = 0; i < numsArr.length; i++) {
+ var inner_array = numsArr[i];
+ for(var j = 0 ; j < inner_array.length;i++ )
+      if(numsArr[i] %2 == 0 )
+      {
+         numsArr[i] = even
+       }
+}
+console.log(numsArr);
+
+ans:
+var numsArr = [
+  [1, 2, 3, 4, 5],
+  [6, 7, 8, 9, 10, 11],
+];
+// var str_all = 0;
+for (var i = 0; i < numsArr.length; i++) {
+  var inner_array = numsArr[i];
+  for (var j = 0; j < inner_array.length; j++) {
+    if ((i + j) % 2 == 0) {             //given required output
+      inner_array[j] = "even";
+    }
+  }
+}
+console.log(numsArr);
+
+oup:
+[ [“even”, 2, “even”, 4, “even”], [6, “even”, 8, “even”, 10] ]
+--------------------------------------------------------------------------------------------
+12.
+Write a code to print elements in the inner arrays in reverse
+
+js:
+var numsArr = [[1, 2, 3, 4, 5],[ 6, 7, 8, 9, 10, 11]];
+var str_all=0;
+for (var i = 0; i < numsArr.length; i++) {
+ var inner_array = numsArr[i];
+ for(var j = inner_array.length; j < 0 ;j-- )
+     str_all +=inner_array[j]
+}
+console.log(str_all);
+
+ans:
+var numsArr = [
+  [1, 2, 3, 4, 5],
+  [6, 7, 8, 9, 10, 11],
+];
+var str_all = "";
+for (var i = numsArr.length - 1; i >= 0; i--) {
+  var inner_array = numsArr[i];
+  for (var j = inner_array.length - 1; j >= 0; j--) {
+    str_all += inner_array[j] + " ";
+  }
+}
+console.log(str_all);
+
+oup:
+11 10 9 8 7 6 5 4 3 2 1
+--------------------------------------------------------------------------------------------
+13.
+Write a code to add elements in the inner arrays based on odd or even values
+
+js:
+var numsArr = [[1, 2, 3, 4, 5],[ 6, 7, 8, 9, 10, 11]];
+var sum_odd=0;
+var sum_even=0;
+for (var i = 0; i < numsArr.length; i++) {
+ var inner_array = numsArr[i];
+ for(var j = 0 ; j < inner_array.length;j++ ){
+ if(numsArr[i]%2!=0)
+ {
+ sum_odd += numsArr[i]
+ }
+ else
+ {
+ sum_even += numsArr[i]
+ }
+}
+}
+console.log(sum_odd);
+console.log(sum_even);
+
+ans:
+var numsArr = [
+  [1, 2, 3, 4, 5],
+  [6, 7, 8, 9, 10, 11],
+];
+var sum_odd = 0;
+var sum_even = 0;
+for (var i = 0; i < numsArr.length; i++) {
+  var inner_array = numsArr[i];
+  for (var j = 0; j < inner_array.length; j++) {
+    if (inner_array[j] % 2 != 0) {
+      sum_odd += inner_array[j]; //using if condition of even adding respective elements
+    } else {
+      sum_even += inner_array[j];
+    }
+  }
+}
+console.log(sum_odd);
+console.log(sum_even);
+
+oup:
+36
+30
